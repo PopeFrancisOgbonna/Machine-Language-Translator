@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DarrenLee.T
+
 
 namespace LanguageTranslator
 {
@@ -19,6 +19,21 @@ namespace LanguageTranslator
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDetectSrc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTranslate_Click(object sender, EventArgs e)
         {
 
         }
