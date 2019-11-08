@@ -124,7 +124,6 @@
             this.txtSrcLang.Name = "txtSrcLang";
             this.txtSrcLang.Size = new System.Drawing.Size(189, 41);
             this.txtSrcLang.TabIndex = 3;
-            this.txtSrcLang.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox1
             // 
