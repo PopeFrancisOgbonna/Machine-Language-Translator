@@ -11,10 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Cloud.Translation.V2;
-using System.Runtime.Serialization;
-
-using System.Runtime.Serialization.Json;
-
 namespace LanguageTranslator
 {
     public partial class Form1 : Form
@@ -112,16 +108,6 @@ namespace LanguageTranslator
                 model: TranslationModel.NeuralMachineTranslation);
                         DestRichT.Text = result.TranslatedText.ToString();
                     }
-                    if (comboBox1.SelectedItem.ToString() == "English Language")
-                    {
-                        TranslationResult result = translate.TranslateText(
-                richTextSrc.Text,
-                targetLanguage: "en",
-                // sourceLanguage: "en",
-                model: TranslationModel.NeuralMachineTranslation);
-                        DestRichT.Text = result.TranslatedText.ToString();
-                    }
-
                 }
                 catch (Exception a)
                 {
@@ -133,7 +119,7 @@ namespace LanguageTranslator
         }
         private void loadCombo()
         {
-            comboBox1.Items.Add("English Language");
+            //comboBox1.Items.Add("English Language");
             comboBox1.Items.Add("Igbo Language");
             comboBox1.Items.Add("Hausa Language");
         }
