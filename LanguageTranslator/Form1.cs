@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Cloud.Translation.V2;
+using System.Data.SqlClient;
+
 namespace LanguageTranslator
 {
     public partial class Form1 : Form
@@ -21,6 +23,8 @@ namespace LanguageTranslator
             loadCombo();
            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", @"C:\Users\Pope Francis\Downloads\seventh-carport-258908-6e2ded26af5d.json");
         }
+
+        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\WordBank.mdf;Integrated Security=True;Connect Timeout=30;";
         private void btnDetectSrc_Click(object sender, EventArgs e)
         {
             //var client = new RestClient()
@@ -146,19 +150,47 @@ namespace LanguageTranslator
             btnClear.Visible = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void OfflineDetect_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("This feature requires internet connection!\nSwitch to online mode t use it.", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void offlineTranslate_Click(object sender, EventArgs e)
         {
+            if (richTextSrc.Text != "" || comboBox1.Text.Contains("Select") == false)
+            {
 
+            }else
+            {
+                MessageBox.Show("Enter word(s) you want to search for.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            addwordPanel.Visible = true;
+        }
+
+        int count = 0;
+        private void btnOffline_Click(object sender, EventArgs e)
+        {
+            addwordPanel.Visible = false;
+            count += 1;
+            if (count == 1)
+            {
+                btnOffline.Text = "Go Online";
+                //show offline features
+                OfflineDetect.Visible = true;
+                offlineTranslate.Visible= true;
+            }
+            if (count == 2)
+            {
+                btnOffline.Text = "Offline Dictionary";
+                count = 0;
+                //disable offline features
+                OfflineDetect.Visible = false;
+                offlineTranslate.Visible = false;
+            }
         }
     }
 

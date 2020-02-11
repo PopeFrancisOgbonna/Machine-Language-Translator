@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnTranslate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.offlineTranslate = new System.Windows.Forms.Button();
+            this.OfflineDetect = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -44,19 +46,17 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnOffline = new System.Windows.Forms.Button();
             this.addwordPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.richEnglish = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.richIgbo = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.offlineClear = new System.Windows.Forms.Button();
             this.richHausa = new System.Windows.Forms.RichTextBox();
+            this.richIgbo = new System.Windows.Forms.RichTextBox();
+            this.richEnglish = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnwordAdd = new System.Windows.Forms.Button();
             this.btnEnglish = new System.Windows.Forms.Button();
             this.btnIgbo = new System.Windows.Forms.Button();
             this.btnHausa = new System.Windows.Forms.Button();
-            this.OfflineDetect = new System.Windows.Forms.Button();
-            this.offlineTranslate = new System.Windows.Forms.Button();
-            this.offlineClear = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.destinationLangPane.SuspendLayout();
@@ -92,6 +92,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(558, 364);
             this.panel1.TabIndex = 1;
+            // 
+            // offlineTranslate
+            // 
+            this.offlineTranslate.BackColor = System.Drawing.Color.DarkViolet;
+            this.offlineTranslate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.offlineTranslate.ForeColor = System.Drawing.Color.White;
+            this.offlineTranslate.Location = new System.Drawing.Point(411, 296);
+            this.offlineTranslate.Name = "offlineTranslate";
+            this.offlineTranslate.Size = new System.Drawing.Size(129, 47);
+            this.offlineTranslate.TabIndex = 10;
+            this.offlineTranslate.Text = "Translate";
+            this.offlineTranslate.UseVisualStyleBackColor = false;
+            this.offlineTranslate.Visible = false;
+            this.offlineTranslate.Click += new System.EventHandler(this.offlineTranslate_Click);
+            // 
+            // OfflineDetect
+            // 
+            this.OfflineDetect.BackColor = System.Drawing.Color.Black;
+            this.OfflineDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OfflineDetect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OfflineDetect.ForeColor = System.Drawing.Color.White;
+            this.OfflineDetect.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.OfflineDetect.Location = new System.Drawing.Point(9, 269);
+            this.OfflineDetect.Name = "OfflineDetect";
+            this.OfflineDetect.Size = new System.Drawing.Size(183, 41);
+            this.OfflineDetect.TabIndex = 9;
+            this.OfflineDetect.Text = "Detect Language";
+            this.OfflineDetect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OfflineDetect.UseVisualStyleBackColor = false;
+            this.OfflineDetect.Visible = false;
+            this.OfflineDetect.Click += new System.EventHandler(this.OfflineDetect_Click);
             // 
             // btnClear
             // 
@@ -214,6 +245,7 @@
             this.btnNew.TabIndex = 5;
             this.btnNew.Text = "Add New Words";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnOffline
             // 
@@ -226,7 +258,7 @@
             this.btnOffline.TabIndex = 6;
             this.btnOffline.Text = "Offline Dictionary";
             this.btnOffline.UseVisualStyleBackColor = false;
-            this.btnOffline.Click += new System.EventHandler(this.button2_Click);
+            this.btnOffline.Click += new System.EventHandler(this.btnOffline_Click);
             // 
             // addwordPanel
             // 
@@ -243,33 +275,26 @@
             this.addwordPanel.TabIndex = 7;
             this.addwordPanel.Visible = false;
             // 
-            // label2
+            // offlineClear
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(61, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "English words(Meaning)";
+            this.offlineClear.BackColor = System.Drawing.Color.Maroon;
+            this.offlineClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.offlineClear.ForeColor = System.Drawing.Color.White;
+            this.offlineClear.Location = new System.Drawing.Point(365, 324);
+            this.offlineClear.Name = "offlineClear";
+            this.offlineClear.Size = new System.Drawing.Size(129, 33);
+            this.offlineClear.TabIndex = 9;
+            this.offlineClear.Text = "Clear Fields";
+            this.offlineClear.UseVisualStyleBackColor = false;
+            this.offlineClear.Visible = false;
             // 
-            // richEnglish
+            // richHausa
             // 
-            this.richEnglish.Location = new System.Drawing.Point(53, 35);
-            this.richEnglish.Name = "richEnglish";
-            this.richEnglish.Size = new System.Drawing.Size(447, 72);
-            this.richEnglish.TabIndex = 1;
-            this.richEnglish.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(61, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(208, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Igbo words(Meaning)";
+            this.richHausa.Location = new System.Drawing.Point(53, 246);
+            this.richHausa.Name = "richHausa";
+            this.richHausa.Size = new System.Drawing.Size(447, 72);
+            this.richHausa.TabIndex = 1;
+            this.richHausa.Text = "";
             // 
             // richIgbo
             // 
@@ -278,6 +303,14 @@
             this.richIgbo.Size = new System.Drawing.Size(447, 72);
             this.richIgbo.TabIndex = 1;
             this.richIgbo.Text = "";
+            // 
+            // richEnglish
+            // 
+            this.richEnglish.Location = new System.Drawing.Point(53, 35);
+            this.richEnglish.Name = "richEnglish";
+            this.richEnglish.Size = new System.Drawing.Size(447, 72);
+            this.richEnglish.TabIndex = 1;
+            this.richEnglish.Text = "";
             // 
             // label4
             // 
@@ -289,13 +322,25 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Hausa words(Meaning)";
             // 
-            // richHausa
+            // label3
             // 
-            this.richHausa.Location = new System.Drawing.Point(53, 246);
-            this.richHausa.Name = "richHausa";
-            this.richHausa.Size = new System.Drawing.Size(447, 72);
-            this.richHausa.TabIndex = 1;
-            this.richHausa.Text = "";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(61, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(208, 24);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Igbo words(Meaning)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(61, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(237, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "English words(Meaning)";
             // 
             // btnwordAdd
             // 
@@ -351,50 +396,6 @@
             this.btnHausa.Text = "Hausa";
             this.btnHausa.UseVisualStyleBackColor = false;
             this.btnHausa.Visible = false;
-            // 
-            // OfflineDetect
-            // 
-            this.OfflineDetect.BackColor = System.Drawing.Color.Black;
-            this.OfflineDetect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OfflineDetect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OfflineDetect.ForeColor = System.Drawing.Color.White;
-            this.OfflineDetect.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.OfflineDetect.Location = new System.Drawing.Point(9, 269);
-            this.OfflineDetect.Name = "OfflineDetect";
-            this.OfflineDetect.Size = new System.Drawing.Size(183, 41);
-            this.OfflineDetect.TabIndex = 9;
-            this.OfflineDetect.Text = "Detect Language";
-            this.OfflineDetect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.OfflineDetect.UseVisualStyleBackColor = false;
-            this.OfflineDetect.Visible = false;
-            this.OfflineDetect.Click += new System.EventHandler(this.OfflineDetect_Click);
-            // 
-            // offlineTranslate
-            // 
-            this.offlineTranslate.BackColor = System.Drawing.Color.DarkViolet;
-            this.offlineTranslate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offlineTranslate.ForeColor = System.Drawing.Color.White;
-            this.offlineTranslate.Location = new System.Drawing.Point(411, 296);
-            this.offlineTranslate.Name = "offlineTranslate";
-            this.offlineTranslate.Size = new System.Drawing.Size(129, 47);
-            this.offlineTranslate.TabIndex = 10;
-            this.offlineTranslate.Text = "Translate";
-            this.offlineTranslate.UseVisualStyleBackColor = false;
-            this.offlineTranslate.Visible = false;
-            this.offlineTranslate.Click += new System.EventHandler(this.offlineTranslate_Click);
-            // 
-            // offlineClear
-            // 
-            this.offlineClear.BackColor = System.Drawing.Color.Maroon;
-            this.offlineClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.offlineClear.ForeColor = System.Drawing.Color.White;
-            this.offlineClear.Location = new System.Drawing.Point(365, 324);
-            this.offlineClear.Name = "offlineClear";
-            this.offlineClear.Size = new System.Drawing.Size(129, 33);
-            this.offlineClear.TabIndex = 9;
-            this.offlineClear.Text = "Clear Fields";
-            this.offlineClear.UseVisualStyleBackColor = false;
-            this.offlineClear.Visible = false;
             // 
             // Form1
             // 
