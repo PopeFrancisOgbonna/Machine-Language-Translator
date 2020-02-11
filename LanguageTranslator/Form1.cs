@@ -145,6 +145,21 @@ namespace LanguageTranslator
         {
             btnClear.Visible = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OfflineDetect_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void offlineTranslate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
